@@ -12,7 +12,6 @@
 <body>
 
     <header class="main-header">
-        <!-- ... Header tetap sama ... -->
         <div class="logo"><a href="index.html" id="home-link">Forum Modern</a></div>
         <div class="header-right">
             <div class="search-bar">
@@ -34,8 +33,9 @@
     <div class="container">
         <!-- TAMPILAN 1: INDEKS KATEGORI (DEFAULT) -->
         <div id="category-view">
-            <!-- ... Konten kategori tetap sama ... -->
-            <nav class="breadcrumb"><a href="#" class="nav-link" data-target="category-view">Beranda</a></nav>
+            <nav class="breadcrumb">
+                <a href="#" class="nav-link" data-target="category-view">Beranda</a>
+            </nav>
             <div class="forum-category">
                 <div class="category-header">Diskusi Umum</div>
                 <div class="forum-row">
@@ -57,7 +57,53 @@
 
         <!-- TAMPILAN 2: DAFTAR TOPIK (SEMBUNYI) -->
         <div id="topic-list-view" style="display: none;">
-            <!-- ... Konten daftar topik (bisa diisi nanti) ... -->
+            
+            <!-- ======================================= -->
+            <!-- INI BAGIAN BARU YANG DITAMBAHKAN          -->
+            <!-- ======================================= -->
+
+            <nav class="breadcrumb">
+                <a href="#" class="nav-link" data-target="category-view">Beranda</a> <span>&gt;</span> Perkenalan
+            </nav>
+
+            <div class="topic-list-container">
+                <div class="topic-list-header">Topik di "Perkenalan"</div>
+
+                <!-- Contoh Topik yang di-Pin -->
+                <div class="topic-row">
+                    <div class="topic-icon">📌</div>
+                    <div class="topic-info">
+                        <h3><a href="#" class="nav-link" data-target="thread-view">PENTING: Baca Aturan Forum Sebelum Posting!</a></h3>
+                        <p class="topic-author">oleh <a href="#">Admin</a></p>
+                    </div>
+                    <div class="topic-stats"><span>15</span> Balasan</div>
+                    <div class="topic-stats"><span>10k</span> Dilihat</div>
+                    <div class="last-post">
+                        oleh <a href="#">Admin</a><br>
+                        01 Jan 2025, 10:00
+                    </div>
+                </div>
+
+                <!-- Topik "Halo dari Miyamura!" -->
+                <div class="topic-row">
+                    <div class="topic-icon">👋</div>
+                    <div class="topic-info">
+                        <h3><a href="#" class="nav-link" data-target="thread-view">Halo dari Miyamura!</a></h3>
+                        <p class="topic-author">oleh <a href="#">Miyamura</a></p>
+                    </div>
+                    <div class="topic-stats"><span>5</span> Balasan</div>
+                    <div class="topic-stats"><span>112</span> Dilihat</div>
+                    <div class="last-post">
+                        oleh <a href="#">Gemini</a><br>
+                        09 Jul 2025, 19:00
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================================= -->
+            <!-- AKHIR DARI BAGIAN BARU                  -->
+            <!-- ======================================= -->
+            
         </div>
 
         <!-- TAMPILAN 3: THREAD/POSTINGAN (SEMBUNYI) -->
@@ -72,18 +118,11 @@
                     <!-- ... Konten post original ... -->
                 </div>
 
-                <!-- ======================================= -->
-                <!-- INI BAGIAN BARU UNTUK CHAT & FORM BALASAN -->
-                <!-- ======================================= -->
-
-                <!-- Area untuk menampilkan balasan dari Google Sheet -->
                 <h2 class="replies-header">Balasan</h2>
                 <div id="chat-box" class="chat-box-container">
-                    <!-- Pesan akan dimuat di sini oleh JavaScript -->
                     <p class="loading-message">Memuat pesan...</p>
                 </div>
 
-                <!-- Form untuk mengirim balasan baru -->
                 <div class="reply-form-container">
                     <h3>Tinggalkan Balasan</h3>
                     <form id="message-form">
@@ -98,11 +137,6 @@
                         <button type="submit" class="auth-button">Kirim Pesan</button>
                     </form>
                 </div>
-                
-                <!-- ======================================= -->
-                <!-- AKHIR DARI BAGIAN BARU                  -->
-                <!-- ======================================= -->
-
             </div>
         </div>
 
@@ -112,9 +146,8 @@
         &copy; 2025 Forum Modern. Dibuat dengan ❤️ oleh namaKamu.
     </footer>
 
-    <!-- Memanggil file JavaScript -->
     <script src="js/main.js"></script>
-    <script src="js/database.js"></script> <!-- PASTIKAN FILE INI DIPANGGIL -->
+    <script src="js/database.js"></script>
 
 </body>
 </html>
