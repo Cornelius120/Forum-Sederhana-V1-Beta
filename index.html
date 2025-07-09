@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Diskusi Modern</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <!-- ... Header tetap sama ... -->
+        <div class="logo"><a href="index.html" id="home-link">Forum Modern</a></div>
+        <div class="header-right">
+            <div class="search-bar">
+                <input type="text" placeholder="Cari topik...">
+            </div>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+            <div class="user-actions">
+                <a href="login.html">Masuk</a>
+                <a href="register.html" class="register-btn">Daftar</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- TAMPILAN 1: INDEKS KATEGORI (DEFAULT) -->
+        <div id="category-view">
+            <!-- ... Konten kategori tetap sama ... -->
+            <nav class="breadcrumb"><a href="#" class="nav-link" data-target="category-view">Beranda</a></nav>
+            <div class="forum-category">
+                <div class="category-header">Diskusi Umum</div>
+                <div class="forum-row">
+                    <div class="forum-icon">💬</div>
+                    <div class="forum-info">
+                        <h3><a href="#" class="nav-link" data-target="topic-list-view">Perkenalan</a></h3>
+                        <p>Tempat untuk menyapa dan memperkenalkan diri Anda kepada komunitas.</p>
+                    </div>
+                    <div class="forum-stats"><span>1.2k</span> Topik</div>
+                    <div class="forum-stats"><span>15k</span> Post</div>
+                    <div class="last-post">
+                        <a href="#" class="post-title nav-link" data-target="thread-view">Halo dari Miyamura!</a>
+                        oleh <a href="#">Miyamura</a><br>
+                        09 Jul 2025, 18:30
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAMPILAN 2: DAFTAR TOPIK (SEMBUNYI) -->
+        <div id="topic-list-view" style="display: none;">
+            <!-- ... Konten daftar topik (bisa diisi nanti) ... -->
+        </div>
+
+        <!-- TAMPILAN 3: THREAD/POSTINGAN (SEMBUNYI) -->
+        <div id="thread-view" style="display: none;">
+            <nav class="breadcrumb">
+                <a href="#" class="nav-link" data-target="category-view">Beranda</a> <span>&gt;</span> <a href="#" class="nav-link" data-target="topic-list-view">Perkenalan</a> <span>&gt;</span> Halo dari Miyamura!
+            </nav>
+
+            <div class="thread-container">
+                <!-- Postingan Original (OP) -->
+                <div class="post">
+                    <!-- ... Konten post original ... -->
+                </div>
+
+                <!-- ======================================= -->
+                <!-- INI BAGIAN BARU UNTUK CHAT & FORM BALASAN -->
+                <!-- ======================================= -->
+
+                <!-- Area untuk menampilkan balasan dari Google Sheet -->
+                <h2 class="replies-header">Balasan</h2>
+                <div id="chat-box" class="chat-box-container">
+                    <!-- Pesan akan dimuat di sini oleh JavaScript -->
+                    <p class="loading-message">Memuat pesan...</p>
+                </div>
+
+                <!-- Form untuk mengirim balasan baru -->
+                <div class="reply-form-container">
+                    <h3>Tinggalkan Balasan</h3>
+                    <form id="message-form">
+                        <div class="form-group">
+                            <label for="username-input">Nama Anda</label>
+                            <input type="text" id="username-input" placeholder="Tulis nama Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-input">Pesan Anda</label>
+                            <textarea id="message-input" rows="4" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                        </div>
+                        <button type="submit" class="auth-button">Kirim Pesan</button>
+                    </form>
+                </div>
+                
+                <!-- ======================================= -->
+                <!-- AKHIR DARI BAGIAN BARU                  -->
+                <!-- ======================================= -->
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="main-footer">
+        &copy; 2025 Forum Modern. Dibuat dengan ❤️ oleh namaKamu.
+    </footer>
+
+    <!-- Memanggil file JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/database.js"></script> <!-- PASTIKAN FILE INI DIPANGGIL -->
+
+</body>
+</html>
